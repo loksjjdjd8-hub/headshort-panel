@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Headshot Panel V2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth" class="auth">
+  <div class="auth-card">
+    <div class="logo">⚡ HEADSHOT <b>PANEL</b></div>
+    <p class="muted">Demo control panel</p>
+
+    <div id="loginBox">
+      <h2>Welcome Back</h2>
+      <input id="loginUser" placeholder="Username">
+      <input id="loginPass" type="password" placeholder="Password">
+      <button class="primary full" id="loginBtn">Login</button>
+      <p class="switch">Don't have an account? <button id="showRegister">Register</button></p>
+    </div>
+
+    <div id="registerBox" class="hidden">
+      <h2>Create Account</h2>
+      <input id="regUser" placeholder="Username">
+      <input id="regPass" type="password" placeholder="Password">
+      <input id="regPass2" type="password" placeholder="Confirm password">
+      <button class="primary full" id="registerBtn">Register</button>
+      <p class="switch">Already registered? <button id="showLogin">Login</button></p>
+    </div>
+    <p id="authMsg" class="msg"></p>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+<aside class="sidebar" id="sidebar">
+  <div class="logo">⚡ HEADSHOT <b>PANEL</b></div>
+  <button class="nav active" data-page="dashboard">🏠 Dashboard</button>
+  <button class="nav" data-page="keys">🔑 Keys</button>
+  <button class="nav" data-page="downloads">📦 Downloads</button>
+  <button class="nav" data-page="profile">👤 Profile</button>
+  <button class="nav logout" id="logout">↪ Logout</button>
+</aside>
+<main>
+<header>
+  <button id="menu">☰</button>
+  <div><h1 id="title">Dashboard</h1><p>Demo panel</p></div>
+  <div class="user" id="userLabel"></div>
+</header>
+
+<section id="dashboard" class="page active-page">
+  <div class="hero"><div><span class="tag">DEMO PANEL</span><h2>Welcome back 👋</h2><p>Manage your own test/demo application keys.</p></div><div class="hero-icon">🎯</div></div>
+  <div class="cards">
+    <div class="card">🔑<small>Total Keys</small><strong id="total">0</strong></div>
+    <div class="card">✅<small>Active Keys</small><strong id="active">0</strong></div>
+    <div class="card">⏳<small>Expiring Soon</small><strong id="soon">0</strong></div>
+  </div>
+  <div class="panel"><h3>Quick Key Generator</h3><div class="form-row">
+    <select id="duration"><option value="1">1 Day</option><option value="7">7 Days</option><option value="30">30 Days</option><option value="365">1 Year</option></select>
+    <button class="primary" id="gen">Generate Demo Key</button>
+  </div><div id="result" class="result hidden"></div></div>
+</section>
+
+<section id="keys" class="page">
+<div class="panel"><div class="panel-head"><h3>Key Management</h3><button class="primary" id="gen2">+ Generate Key</button></div>
+<div class="table-wrap"><table><thead><tr><th>Key</th><th>Created</th><th>Expires</th><th>Status</th></tr></thead><tbody id="table"></tbody></table></div></div>
+</section>
+
+<section id="downloads" class="page">
+<div class="panel"><h3>Downloads</h3><div class="download-card"><div class="app-icon">🎮</div><div><strong>Demo Client</strong><p>Placeholder for your own legitimate test application.</p></div><button class="primary" id="dl">Download</button></div></div>
+</section>
+
+<section id="profile" class="page">
+<div class="panel profile"><div class="avatar" id="avatar">G</div><h3 id="profileName">Guest</h3><p>Demo account</p></div>
+</section>
+</main></div>
+<script src="script.js"></script>
+</body>
+</html>
